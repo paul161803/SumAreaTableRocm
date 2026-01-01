@@ -13,4 +13,5 @@ Calculate sum area table of 2D matrix/image
 * ```cmake --build .```
 
 # Reference
-[https://ieeexplore.ieee.org/document/8425490/citations#citations](https://www.cs.hiroshima-u.ac.jp/cs/_media/sat_apdcm.pdf)
+* Paper: [Link](https://www.cs.hiroshima-u.ac.jp/cs/_media/sat_apdcm.pdf)
+* Note: [Link](https://hackmd.io/@3GLxbsVOS1Csu7H1dHcZUA/rJBX91-4Wl)
