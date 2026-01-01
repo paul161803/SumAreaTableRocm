@@ -3,7 +3,7 @@ Calculate sum area table of 2D matrix/image
 
 # Build
 * ```cd SumAreaTable```
-* ```cmake -S . -B build -G Ninja -DCOMPILE_COMMAND=ON -DCMAKE_BUILD_TYPE=Debug/Release```
+* ```cmake -S . -B build -G Ninja -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Debug/Release```
 * ```cd build```
 * ```cmake --build .```
 

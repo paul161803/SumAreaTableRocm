@@ -15,8 +15,6 @@ set(ROCM_ROOT
 )
 
 list(APPEND CMAKE_PREFIX_PATH "${ROCM_ROOT}")
-list(APPEND include_dirs "include/")
-
 find_package(hip REQUIRED)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -24,10 +22,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
 # Create Library
-add_library(${libname} src/satHip.hip)
+add_executable(${libname} src/satHip.hip)
 
 target_link_libraries(${libname} PRIVATE hip::device)
-target_include_directories(${libname} PRIVATE ${include_dirs})
+target_include_directories(${libname} PRIVATE ${CMAKE_SOURCE_DIR}/include)
 
 # testing 
 if(BUILD_TESTING)
