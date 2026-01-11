@@ -22,10 +22,20 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
 # Create Library
+# Header-only library target
+add_library("${libname}_header" INTERFACE)
+
+target_include_directories("${libname}_header" INTERFACE
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
+)
+
+target_link_libraries("${libname}_header" INTERFACE hip::device)
+
+# Executable target
 add_executable(${libname} src/satHip.hip)
 
 target_link_libraries(${libname} PRIVATE hip::device)
-target_include_directories(${libname} PRIVATE ${CMAKE_SOURCE_DIR}/include)
+target_link_libraries(${libname} PRIVATE "${libname}_header")
 
 # testing 
 if(BUILD_TESTING)
